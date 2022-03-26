@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kodlama.io.hrms.adapters.CandidateCheckService;
 import kodlama.io.hrms.business.abstracts.CandidateCvService;
 import kodlama.io.hrms.business.abstracts.CandidateService;
 import kodlama.io.hrms.business.abstracts.UserActivationService;
@@ -36,20 +35,18 @@ public class CandidateManager implements CandidateService {
 	private UserCheckService userCheckService;
 	private UserActivationService userActivationService;
 	private EMailService eMailService;
-	private CandidateCheckService candidateCheckService;
 	private UserDao userDao;
 	private UserService userService;
 	private CandidateCvService candidateCvService;
 
 	@Autowired
 	public CandidateManager(CandidateDao candidateDao, UserCheckService userCheckService, 
-			UserActivationService userActivationService, EMailService eMailService, CandidateCheckService candidateCheckService,
+			UserActivationService userActivationService, EMailService eMailService,
 			UserDao userDao, UserService userService, CandidateCvService candidateCvService) {
 		this.candidateDao = candidateDao;
 		this.userCheckService = userCheckService;
 		this.userActivationService = userActivationService;
 		this.eMailService = eMailService;
-		this.candidateCheckService = candidateCheckService;
 		this.userDao = userDao;
 		this.userService = userService;
 		this.candidateCvService = candidateCvService;
