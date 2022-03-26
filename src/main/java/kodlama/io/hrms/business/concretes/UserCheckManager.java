@@ -1,12 +1,12 @@
 package kodlama.io.hrms.business.concretes;
 
 import java.util.regex.Matcher;
+
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kodlama.io.hrms.adapters.CandidateCheckService;
 import kodlama.io.hrms.business.abstracts.UserCheckService;
 import kodlama.io.hrms.dataAccess.abstracts.CandidateDao;
 import kodlama.io.hrms.dataAccess.abstracts.UserDao;
@@ -17,14 +17,12 @@ import kodlama.io.hrms.entities.concretes.User;
 @Service
 public class UserCheckManager implements UserCheckService {
 	
-	private CandidateCheckService candidateCheckService;
 	private UserDao userDao;
 	private CandidateDao candidateDao;
 	
 	
 	@Autowired
-	public UserCheckManager(CandidateCheckService candidateCheckService, UserDao userDao, CandidateDao candidateDao) {
-		this.candidateCheckService = candidateCheckService;
+	public UserCheckManager(UserDao userDao, CandidateDao candidateDao) {
 		this.userDao = userDao;
 		this.candidateDao = candidateDao;
 	}
