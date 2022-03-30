@@ -21,7 +21,7 @@ import kodlama.io.hrms.entities.concretes.CandidateCv;
 
 @RestController
 @RequestMapping("/api/candidatesCvs")
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CandidatesCvsController {
 	
 	private CandidateCvService candidateCvService;
